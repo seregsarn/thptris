@@ -470,10 +470,6 @@ $(document).ready(function() {
             break;
         }
     });
-    $('.changelog h1').click(function(ev) { 
-        $('.changelog').toggleClass('open');
-        $('.changelog ul').slideToggle({ duration: 50 });
-    });
     //if (location.search == "?debug") $('canvas').css({'width': '320px', 'display': 'block', 'image-rendering': 'pixelated'});
     tick();
 });

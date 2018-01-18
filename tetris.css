@@ -1,0 +1,47 @@
+canvas {
+    display: none;
+    -webkit-font-smoothing: none;
+}
+#lines {
+    font-family: sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
+}
+.changelog {
+    font-size: 8pt;
+}
+.changelog h1 {
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: 1px outset;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+}
+.changelog.open h1 {
+    border: 1px inset;
+}
+.changelog ul {
+    display: none;
+    font-family: monospace;
+}
+.bonus {
+    font-size: 24pt;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: red;
+    -webkit-animation: colorcycle 0.4s infinite;
+}
+@keyframes colorcycle {
+    0% { color: red; }
+    4% { color: orange; }
+    20% { color: yellow; }
+    36% { color: green; }
+    52% { color: blue; }
+    68% { color: indigo; }
+    84% { color: violet; }
+    100% { color: red; }
+    101% {}
+}

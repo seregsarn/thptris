@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thptris</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="shortcut icon" id="favicon" href="favicon.png"/>
+    <link rel="stylesheet" href="tetris.css"/>
+</head>
+<body>
+
+<pre>
+lol, tetris
+
+[N]: New Game
+
+[A / Left Arrow]: left
+[D / Right Arrow]: right
+[Q / Shift+Left Arrow]: Rotate CCW
+[E / Shift+Right Arrow]: Rotate CW
+[S / Down Arrow]: Drop
+[W / Up Arrow]: Sonic Drop
+<!-- super secret! press * to show/hide the super-zoomed-in version of the game so you don't have to destroy your eyes playing it. -->
+</pre>
+<div id="lines"></div>
+<div class="changelog">
+<h1>Changelog</h1>
+<ul>
+    <li> <strong>01.17.2018</strong> - Added next-piece display. </li>
+    <li> <strong>05.31.2017</strong> - Tweaked how pieces rotate, fixed how wall and floor kicks work. Changed the colors of the pieces to match standard Tetris, I thought I had them right but I guess I was misremembering. Also redesigned the score system, which now maxes out at 999,999 and supports things like bonuses for T-spins.</li>
+    <li> <strong>05.25.2017</strong> - Updated the controls to be less annoying on the keyboard.</li>
+    <li> <strong>05.24.2017</strong> - Released.
+</ul>
+</div>
+
+<script src="Tetromino.js"></script>
+<script src="Tetris.js"></script>
+</body>
+</html>

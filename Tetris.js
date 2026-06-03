@@ -47,7 +47,8 @@ var pieces = [
 
 function debug(s) {
     if (location.search == "?debug") {
-        $('#debugLog').html($('#debugLog').html() + "<br>" + s);
+        let log = document.querySelector('#debugLog');
+        log.innerHTML = log.innerHTML + "<br>" + s;
     }
 }
 
@@ -91,12 +92,12 @@ function pickPiece(history, version) {
 }
 
 function flip() {
-    var data = $('#canvas').get(0).toDataURL('image/png');
+    var data = document.querySelector('#canvas').toDataURL('image/png');
     //console.log(data);
-    $('#favicon').get(0).href = data;
+    document.querySelector('#favicon').href = data;
 }
 
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', (ev) => {
     // 20 high
     // 23+ invisible rows above that
     // ARE 0
@@ -123,9 +124,8 @@ $(document).ready(function() {
     var canvas = document.createElement('canvas');
     canvas.width = 16; canvas.height = 16;
     //canvas.style = 'width: 64px; border: 1px dotted red;';
-    canvas.style = 'display: none; image-rendering: pixelated;';
     canvas.id = 'canvas';
-    $('#lines').before(canvas);
+    document.querySelector('#lines').before(canvas);
     var ctx = canvas.getContext('2d');
     ctx.lineWidth = 1;
     ctx.mozImageSmoothingEnabled = false;
@@ -385,13 +385,12 @@ $(document).ready(function() {
             ctx.fillText('OVER', 0, 12);
         }
         flip();
-        $('#lines').html(
+        document.querySelector('#lines').innerHTML =
             "Lines: " + lines.toString()
             + "<br>Points: " + points.toString()
             + (combo > 1 ? ("<br>Combo x" + combo + "!") : "")
             //+ (location.search == "?debug" ? "<br>t_spin: " + t_spin + " R: " + rotated + " K: " + kicked : "") 
-            + (t_spin >= 1 ? ("<br><span class=\"bonus\">T-Spin"+ (t_spin > 1 ? " Bonus!!":"") +"!</span>") : "")
-        );
+            + (t_spin >= 1 ? ("<br><span class=\"bonus\">T-Spin"+ (t_spin > 1 ? " Bonus!!":"") +"!</span>") : "");
         document.title = "Thptris "+ describeNext();
     }
     // gameloop
@@ -407,7 +406,7 @@ $(document).ready(function() {
         redraw();
         timer = setTimeout(tick, TICK_DELAY);
     }
-    $('body').keydown(function(event) {
+    document.body.addEventListener('keydown', (event) => {
         if (clearing) return;
         switch (event.which) {
             case 81: // q
@@ -461,15 +460,11 @@ $(document).ready(function() {
             break
             case 56: // sekret
                 if (event.shiftKey) {
-                    if (!$('canvas').is(':visible')) {
-                        $('canvas').css({'width': '320px', 'display': 'block', 'image-rendering': 'pixelated'});
-                    } else {
-                        $('canvas').css({'width': '320px', 'display': 'none', 'image-rendering': 'pixelated'});
-                    }
+                    let canvas = document.querySelector('canvas');
+                    canvas.classList.toggle('show-on-page');
                 }
             break;
         }
     });
-    //if (location.search == "?debug") $('canvas').css({'width': '320px', 'display': 'block', 'image-rendering': 'pixelated'});
     tick();
 });

@@ -1,6 +1,11 @@
 canvas {
     display: none;
     -webkit-font-smoothing: none;
+    image-rendering: pixelated;
+}
+canvas.show-on-page {
+    width: 320px;
+    display: block;
 }
 #lines {
     font-family: sans-serif;
@@ -25,8 +30,23 @@ canvas {
     border: 1px inset;
 }
 .changelog ul {
-    display: none;
+    /* display: none; */
     font-family: monospace;
+}
+.changelog.open ul { display: block; }
+
+.changelog .fold {
+    display: block;
+    max-height: 0px;
+    width: 600px;
+    transition: line-height 0.5s ease-in-out, color 0.5s ease-in-out;
+    line-height: 0;
+    color: transparent;
+}
+.changelog.open .fold {
+    max-height: 200vh;
+    line-height: 1.25;
+    color: black;
 }
 .bonus {
     font-size: 24pt;

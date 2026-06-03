@@ -1,4 +1,9 @@
-[{
+var changelog = [{
+    "version": "1.4",
+    "date": "06.03.2026",
+    "description": "Refactor and repackage for github deployment. Also removed old jquery dependencies and the need for a webserver to run it."
+},
+{
     "version": "1.3",
     "date": "01.17.2018",
     "description": "Added next-piece display."
@@ -17,4 +22,4 @@
     "version": "1.0",
     "date": "05.24.2017",
     "description": "Released."
-}]
+}];

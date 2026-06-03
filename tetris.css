@@ -14,6 +14,7 @@ canvas.show-on-page {
 }
 .changelog {
     font-size: 8pt;
+    font-family: monospace;
 }
 .changelog h1 {
     display: inline-block;
@@ -29,12 +30,6 @@ canvas.show-on-page {
 .changelog.open h1 {
     border: 1px inset;
 }
-.changelog ul {
-    /* display: none; */
-    font-family: monospace;
-}
-.changelog.open ul { display: block; }
-
 .changelog .fold {
     display: block;
     max-height: 0px;
